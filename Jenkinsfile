@@ -8,7 +8,7 @@ pipeline {
     }
     stage("Running Server") {
       steps {
-        sh 'npm run dev'
+        sh 'npm run dev -- --host'
       }
     }
   }
