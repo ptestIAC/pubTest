@@ -1,9 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage("Greeting") {
+    stage("Change dir") {
       steps {
-        echo "Greetings Adventure"
+        cd demo-test
+      }
+    }
+    stage("PNPM Pose") {
+      steps {
+        pnpm install 
+      }
+    }
+    stage("Running Server") {
+      steps {
+        pnpm run dev
       }
     }
   }
