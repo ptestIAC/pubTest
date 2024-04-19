@@ -3,17 +3,17 @@ pipeline {
   stages {
     stage("Change dir") {
       steps {
-        cd demo-test
+        sh 'cd demo-test'
       }
     }
     stage("PNPM Pose") {
       steps {
-        pnpm install 
+        sh 'pnpm install'
       }
     }
     stage("Running Server") {
       steps {
-        pnpm run dev
+        sh 'pnpm run dev'
       }
     }
   }
