@@ -1,6 +1,5 @@
 pipeline {
   agent any
-  tools {nodejs "nodejs"}
   stages {
     stage("Change dir") {
       steps {
@@ -9,12 +8,12 @@ pipeline {
     }
     stage("PNPM Pose") {
       steps {
-        sh 'pnpm install'
+        sh 'npm install'
       }
     }
     stage("Running Server") {
       steps {
-        sh 'pnpm run dev'
+        sh 'npm run dev'
       }
     }
   }
